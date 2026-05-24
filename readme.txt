@@ -1,6 +1,6 @@
 === Polyglot Translate Connector ===
 Contributors: eleviosolutions
-Tags: translation, connectors, ai, multilingual, byok
+Tags: translation, translation-api, ai-translation, multilingual, connector
 Requires at least: 7.0
 Tested up to: 7.0
 Requires PHP: 7.4
@@ -8,90 +8,126 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Registers Polyglot Translate as a translation provider in WordPress 7.0 Connectors. BYOK — bring your own API key.
+Self-learning translation API for WordPress 7.0+. 90+ languages, native Connectors integration, BYOK credentials, any-plugin ready.
 
 == Description ==
 
-**Polyglot Translate Connector** is a lightweight plugin that registers [Polyglot Translate](https://polyglot-translate.cloud) as a `translation` connector inside the new WordPress 7.0 Connectors API. It adds Polyglot to your **Settings → Connectors** screen alongside Anthropic, OpenAI, and Google — giving you one familiar place to manage your translation backend credentials.
+**Polyglot Translate Connector** plugs the [Polyglot Translate](https://polyglot-translate.cloud) cloud into the brand-new **WordPress 7.0 Connectors API** — the same screen where you configure Anthropic, OpenAI, and Google. One API key, securely stored, available to every plugin on your site that needs translation.
 
-This plugin does **not** perform translations itself. Instead, it exposes Polyglot Cloud as a translation provider that any compatible WordPress plugin can discover and consume. If you want a turn-key translation experience (frontend language switcher, glossary, admin editor), install [Polyglot Translate](https://wordpress.org/plugins/polyglot-translate/) as well.
+= Why this exists =
 
-**Use this plugin if you:**
+WordPress 7.0 introduced a native way for plugins to share credentials for external services. Instead of every translation-aware plugin shipping its own settings page and asking you to paste the same key over and over, this connector lets you set it **once** in **Settings → Connectors** and have it just work everywhere.
 
-* Want to securely manage your Polyglot API key from the native WP 7.0 Connectors UI (with automatic masking in REST responses).
-* Run an enterprise or agency-built WordPress site where developers consume Polyglot directly via custom code, REST calls, or the `polyglot/wp-sdk` Composer package — and don't need our full plugin UI.
-* Want other plugins (AI content generators, SEO tools, WooCommerce extensions, etc.) to be able to discover Polyglot as a translation backend on your site, share the same key, and stay in sync.
+= What makes Polyglot Translate different =
 
-**BYOK (Bring Your Own Key) workflow:**
+Polyglot is not "another machine translation API." It's a **translation memory that learns from every edit anyone makes on your site or across the network**. Translations get better the more they're used — the system remembers good phrasings, learns your terminology, and progressively replaces machine output with verified high-quality results. You pay per character, not per call, and your translation memory belongs to you (cancel anytime — your data stays).
 
-1. Sign up at [app.polyglot-translate.cloud](https://app.polyglot-translate.cloud) and generate an API key.
-2. Install this plugin.
-3. Open **Settings → Connectors**, find "Polyglot Translate", paste your key.
-4. Done. The key is now available to any WordPress plugin via the `polyglot_get_api_key()` helper function — and lives encrypted-at-rest via the WordPress core Connectors machinery.
+= What this plugin actually does =
 
-**Credential precedence (highest to lowest):**
+* Registers Polyglot Translate as a `translation`-type connector in the WordPress 7.0 Connectors registry.
+* Adds the Polyglot card to **Settings → Connectors**, with a logo, description, "Get your API key" link, and credential field.
+* Validates your API key against Polyglot Cloud on save (warns you, doesn't block, if the cloud is unreachable).
+* Exposes 5 stable PHP helper functions (`polyglot_get_api_key()`, `polyglot_is_connected()`, `polyglot_get_api_base_url()`, etc.) that **any other plugin on your site can use** to consume Polyglot transparently.
+* Adds a Site Health check so you can verify the connection state anytime.
+* Supports environment variables and PHP constants for credentials — enterprise-friendly, no API keys in your database if your security policy forbids it.
 
-1. `POLYGLOT_TRANSLATE_API_KEY` environment variable (set via your hosting panel)
+= What this plugin does NOT do =
+
+* It does **not** translate content. It's a credential + discovery layer. For an end-to-end translation experience (front-end language switcher, glossary, post editor), install the main [Polyglot Translate](https://wordpress.org/plugins/polyglot-translate/) plugin alongside this one.
+* It does **not** add visible admin UI beyond the native Connectors screen and one small Advanced settings sub-page for endpoint overrides.
+* It does **not** ship any AJAX handlers or REST endpoints of its own.
+
+= For plugin developers — discover Polyglot from your plugin =
+
+If you're building a WordPress plugin (AI content generator, SEO tool, WooCommerce extension, multilingual workflow…) and you want to use Polyglot Cloud as your translation backend, you no longer need to ship your own settings UI or ask users for an API key. This connector handles credential discovery:
+
+`if ( function_exists( 'polyglot_is_connected' ) && polyglot_is_connected() ) {
+    $api_key = polyglot_get_api_key();
+    $base_url = polyglot_get_api_base_url();
+    // Make REST calls against $base_url/v1/translate, etc.
+}`
+
+For higher-level conveniences (batching, retry policy, response DTOs), use the official [`polyglot/wp-sdk`](https://github.com/eleviosolutions/polyglot-wp-sdk) Composer package — a separate library that wraps this connector.
+
+= Credential precedence =
+
+Highest to lowest:
+
+1. `POLYGLOT_TRANSLATE_API_KEY` environment variable (set in your hosting panel)
 2. `POLYGLOT_TRANSLATE_API_KEY` PHP constant (defined in `wp-config.php`)
-3. Database option set via Settings → Connectors
+3. Database option (set via Settings → Connectors)
 
-**Advanced — custom API endpoint:**
+= Advanced — custom API endpoint =
 
-If you operate a self-hosted Polyglot deployment, a reverse-proxy gateway (Cloudflare Workers, AWS Lambda, etc.), or a staging environment, you can override the API base URL via **Settings → Polyglot Translate**. HTTPS-only.
+If you operate a self-hosted Polyglot deployment, a reverse-proxy gateway (Cloudflare Workers, AWS Lambda…), or a staging environment, you can override the API base URL via **Settings → Polyglot Translate**. HTTPS-only.
 
 == Installation ==
 
-1. Upload `polyglot-translate-connector` to `/wp-content/plugins/`, or install via the Plugins screen.
-2. Activate the plugin through the **Plugins** menu in WordPress.
-3. Go to **Settings → Connectors** and paste your Polyglot Translate API key.
-4. (Optional) Open **Site Health → Info → Polyglot Translate Connector** to verify the connection state.
+1. Install via the Plugins screen, or upload `polyglot-translate-connector` to `/wp-content/plugins/`.
+2. Activate the plugin.
+3. Go to **Settings → Connectors** and paste your Polyglot Translate API key (get one at [app.polyglot-translate.cloud](https://app.polyglot-translate.cloud)).
+4. Done. Any Polyglot-aware plugin on your site can now use the same key.
 
 == Frequently Asked Questions ==
 
-= Do I need this plugin if I already have Polyglot Translate installed? =
+= What is Polyglot Translate? =
 
-No — but you can use both. The main Polyglot Translate plugin gives you a full end-user UI. This connector plugin is for developers and operators who want only the credential management layer.
+Polyglot Translate is a cloud translation service with self-learning translation memory. Unlike generic machine translation APIs, Polyglot remembers good translations across uses, learns your terminology, and progressively replaces machine output with higher-quality verified results. You pay per character, not per call.
 
-= Will this plugin send translation requests? =
+= Do I need this plugin if I already use the main Polyglot Translate plugin? =
 
-No. It performs only ONE network call: a `GET /v1/health` preflight against Polyglot Cloud each time you save your API key, to verify it's valid. The result is cached for 5 minutes.
+No. The main plugin handles everything end-to-end. This connector is for two specific audiences: (a) WordPress 7.0+ users who want their Polyglot key to live in the native Connectors registry and be available to multiple plugins, and (b) developers and agencies building custom translation workflows on top of Polyglot Cloud.
 
-= How do other plugins use this connector? =
+= How is this different from the Anthropic, OpenAI, or Google connectors that ship with WordPress 7.0? =
 
-Other plugins call the global helper `polyglot_get_api_key()` to retrieve the key (with full env/constant/DB precedence), then make REST API calls against Polyglot Cloud directly — or use the official `polyglot/wp-sdk` Composer package for higher-level conveniences (batching, retry, error normalization).
+Those connectors expose **AI text generation** providers — they're for plugins that want to generate or rewrite content. This connector exposes a dedicated **translation** provider — purpose-built for high-quality multilingual translation with translation memory. Different tool, different job.
+
+= Will this plugin send translation requests to Polyglot? =
+
+No. It performs exactly one type of network call: a `GET /v1/health` preflight check against Polyglot Cloud whenever you save your API key, to verify the key is valid. Nothing else.
 
 = Is my API key visible to other plugins on the site? =
 
-Yes. This is the same model WordPress core uses for all Connectors (Anthropic, OpenAI, etc.) — site settings are shared. If you need per-plugin scoping, generate a separate scoped key for each consumer in your Polyglot Dashboard.
+Yes — by design. This is the same model WordPress core uses for all Connectors (Anthropic, OpenAI, Google, Akismet). Site settings are shared. If you need per-plugin scoping, generate a separate scoped key for each consumer in your Polyglot Dashboard.
 
 = What happens if Polyglot Cloud is temporarily unreachable when I save my key? =
 
-The key is still saved. An admin notice will warn you that validation could not complete, and the Site Health check will show "Recommended — unreachable." You can re-test at any time from Site Health.
+The key is still saved. An admin notice will tell you validation could not complete, and the Site Health check will show "Recommended — unreachable." You can re-test at any time from Site Health.
+
+= Is this affiliated with WordPress.org or Automattic? =
+
+No. WordPress and the WordPress logo are trademarks of the WordPress Foundation. This plugin is developed by Elevio Solutions, the company behind Polyglot Translate.
 
 = Can I use a custom API endpoint? =
 
 Yes. Open **Settings → Polyglot Translate** and enter an HTTPS URL. Useful for self-hosted deployments, reverse proxies, or staging environments.
 
+= Does this plugin send any data to third parties? =
+
+The only outbound call this plugin makes is `GET /v1/health` to Polyglot Cloud (`api.polyglot-translate.cloud`), with your API key in the `Authorization` header — used solely to validate the key on save. No telemetry, no analytics, no other endpoints. See our [privacy policy](https://polyglot-translate.cloud/privacy) for what Polyglot Cloud itself does with translation traffic.
+
 == Screenshots ==
 
-1. Polyglot Translate connector card in the WordPress 7.0 Settings → Connectors screen, alongside Anthropic, OpenAI, and Google.
-2. Connected state with masked API key.
-3. Site Health debug info section showing connector metadata, key source, and last validation timestamp.
+1. Polyglot Translate card in the WordPress 7.0 Settings → Connectors screen, alongside Anthropic, OpenAI, and Google.
+2. Connected state — API key entered, validated against Polyglot Cloud, masked in the UI.
+3. Site Health debug info section showing connector metadata, key source, and last validation status.
+4. Advanced settings — optional custom API endpoint override for self-hosted or reverse-proxy deployments.
 
 == Changelog ==
 
-= 1.0.0 — 2026-05-?? =
+= 1.0.0 — 2026-05-24 =
 
 * Initial release.
-* Registers Polyglot Translate as a `translation` type connector in WordPress 7.0 Connectors API.
+* Registers Polyglot Translate as a `translation`-type connector in the WordPress 7.0 Connectors API.
 * Preflight API key validation via `GET /v1/health` (warn-don't-block strategy).
-* Public helpers: `polyglot_get_api_key()`, `polyglot_get_api_base_url()`, `polyglot_is_connected()`, `polyglot_get_connector_id()`, `polyglot_get_api_key_source()`.
-* Site Health check integration (top-level test + debug info).
-* BYOK endpoint URL override via Settings → Polyglot Translate.
-* Localization-ready (English, Serbian).
+* Public helpers for plugin developers: `polyglot_get_api_key()`, `polyglot_get_api_base_url()`, `polyglot_is_connected()`, `polyglot_get_connector_id()`, `polyglot_get_api_key_source()`.
+* Site Health check integration (top-level test + debug info section).
+* BYOK (Bring Your Own Key) workflow via Settings → Connectors.
+* Optional custom API endpoint override via Settings → Polyglot Translate.
+* Localization-ready: English source, Serbian (sr_RS) translation included.
 
 == Upgrade Notice ==
 
 = 1.0.0 =
 
-Initial release.
+Initial public release.

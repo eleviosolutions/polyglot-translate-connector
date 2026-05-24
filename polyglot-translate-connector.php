@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Polyglot Translate Connector
  * Plugin URI:        https://polyglot-translate.cloud/wordpress-connector
- * Description:       Registers Polyglot Translate as a translation provider in WordPress 7.0 Connectors. Lets any plugin discover and use Polyglot Cloud as a translation backend, with BYOK (Bring Your Own Key) credential management.
+ * Description:       Polyglot Translate as a native WordPress 7.0 Connector. Self-learning translation API for 90+ languages, BYOK credentials, ready for any plugin.
  * Version:           1.0.0
  * Requires at least: 7.0
  * Requires PHP:      7.4
