@@ -49,7 +49,7 @@ final class RegistrarTest extends TestCase {
 		$this->assertSame( 'POLYGLOT_TRANSLATE_API_KEY', $auth['constant_name'] );
 		$this->assertSame( 'POLYGLOT_TRANSLATE_API_KEY', $auth['env_var_name'] );
 		$this->assertSame(
-			'https://app.polyglot-translate.cloud/dashboard/connections',
+			'https://polyglot-translate.cloud',
 			$auth['credentials_url']
 		);
 	}

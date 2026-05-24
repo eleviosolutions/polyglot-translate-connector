@@ -46,13 +46,9 @@ spl_autoload_register( static function ( string $class ): void {
 	}
 } );
 
-add_action( 'plugins_loaded', static function (): void {
-	load_plugin_textdomain(
-		'polyglot-translate-connector',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}, 5 );
+// Note: load_plugin_textdomain() intentionally NOT called.
+// Since WordPress 4.6, translations hosted on WordPress.org are loaded automatically.
+// For manual installs, place .mo files in /wp-content/languages/plugins/.
 
 add_action( 'wp_connectors_init', [ Registrar::class, 'register' ] );
 

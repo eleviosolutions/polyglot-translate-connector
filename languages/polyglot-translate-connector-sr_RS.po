@@ -19,8 +19,8 @@ msgstr ""
 msgid "Polyglot Translate"
 msgstr "Polyglot Translate"
 
-msgid "Self-learning translation memory with multi-provider cascade. 90+ languages with native-quality output for Serbian, Croatian, Slovenian, Bulgarian, and other SEE languages."
-msgstr "Samoučeća translation memory sa multi-provider kaskadom. 90+ jezika sa nativnim kvalitetom za srpski, hrvatski, slovenački, bugarski i ostale jezike Jugoistočne Evrope."
+msgid "Self-learning translations in 90+ languages. Strongest Serbian, Croatian & SEE quality on the market."
+msgstr "Samoučeći prevodi u 90+ jezika. Najjači kvalitet za srpski, hrvatski i SEE jezike na tržištu."
 
 msgid "No API key configured."
 msgstr "API ključ nije konfigurisan."

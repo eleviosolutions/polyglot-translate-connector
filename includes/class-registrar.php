@@ -25,7 +25,7 @@ final class Registrar {
 			[
 				'name'        => __( 'Polyglot Translate', 'polyglot-translate-connector' ),
 				'description' => __(
-					'Self-learning translation memory with multi-provider cascade. 90+ languages with native-quality output for Serbian, Croatian, Slovenian, Bulgarian, and other SEE languages.',
+					'Self-learning translations in 90+ languages. Strongest Serbian, Croatian & SEE quality on the market.',
 					'polyglot-translate-connector'
 				),
 				'logo_url'    => POLYGLOT_CONNECTOR_URL . 'assets/polyglot-logo.svg',
@@ -38,7 +38,7 @@ final class Registrar {
 				],
 				'authentication' => [
 					'method'          => 'api_key',
-					'credentials_url' => 'https://app.polyglot-translate.cloud/dashboard/connections',
+					'credentials_url' => 'https://polyglot-translate.cloud',
 					'setting_name'    => POLYGLOT_CONNECTOR_SETTING_NAME,
 					'constant_name'   => 'POLYGLOT_TRANSLATE_API_KEY',
 					'env_var_name'    => 'POLYGLOT_TRANSLATE_API_KEY',

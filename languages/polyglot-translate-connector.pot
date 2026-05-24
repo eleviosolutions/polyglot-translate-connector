@@ -20,7 +20,7 @@ msgid "Polyglot Translate"
 msgstr ""
 
 #: includes/class-registrar.php
-msgid "Self-learning translation memory with multi-provider cascade. 90+ languages with native-quality output for Serbian, Croatian, Slovenian, Bulgarian, and other SEE languages."
+msgid "Self-learning translations in 90+ languages. Strongest Serbian, Croatian & SEE quality on the market."
 msgstr ""
 
 #: includes/class-validator.php

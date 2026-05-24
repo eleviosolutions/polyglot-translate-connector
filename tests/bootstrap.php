@@ -9,9 +9,14 @@
  * @package PolyglotTranslateConnector
  */
 
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Test stubs intentionally mirror WP function names.
+// phpcs:disable WordPress.Files.FileName -- Bootstrap file naming follows PHPUnit convention.
+
 declare( strict_types=1 );
 
-define( 'ABSPATH', __DIR__ . '/' );
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
 define( 'WPINC', 'wp-includes' );
 
 if ( ! defined( 'POLYGLOT_CONNECTOR_TEST_MODE' ) ) {
@@ -146,6 +151,7 @@ function admin_url( string $path = '' ): string {
 }
 
 function wp_parse_url( string $url ): array {
+	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url -- This IS the wp_parse_url stub for tests.
 	$parsed = parse_url( $url );
 	return is_array( $parsed ) ? $parsed : [];
 }
