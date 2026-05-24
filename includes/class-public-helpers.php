@@ -46,7 +46,7 @@ final class PublicHelpers {
 	}
 
 	/**
-	 * Reads the configured API base URL (BYOK endpoint override) or default.
+	 * Reads the configured API base URL (custom endpoint override) or default.
 	 */
 	public static function polyglot_get_api_base_url(): string {
 		$env_value = getenv( 'POLYGLOT_TRANSLATE_API_BASE' );

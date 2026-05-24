@@ -1,6 +1,6 @@
 <?php
 /**
- * BYOK endpoint URL override — advanced setting page for custom API base URLs.
+ * Custom endpoint URL override — advanced setting page for self-hosted / proxy / staging API base URLs.
  *
  * Default base URL is https://api.polyglot-translate.cloud (defined via constant).
  * Enterprise / self-hosted / reverse-proxy deployments can override here.

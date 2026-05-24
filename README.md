@@ -1,6 +1,6 @@
 # Polyglot Translate Connector for WordPress
 
-> Registers [Polyglot Translate](https://polyglot-translate.cloud) as a `translation` provider in the WordPress 7.0 Connectors API. BYOK credential management for any WP plugin that wants to use Polyglot Cloud as a translation backend.
+> Registers [Polyglot Translate](https://polyglot-translate.cloud) as a `translation` provider in the WordPress 7.0 Connectors API. Native, secure credential management for any WP plugin that wants to use Polyglot Cloud as a translation backend.
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 [![Requires WordPress 7.0+](https://img.shields.io/badge/WordPress-7.0%2B-blue.svg)](https://wordpress.org/)

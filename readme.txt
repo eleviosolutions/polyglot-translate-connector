@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Self-learning translation API for WordPress 7.0+. 90+ languages, native Connectors integration, BYOK credentials, any-plugin ready.
+Self-learning translation API for WordPress 7.0+. 90+ languages, native Connectors integration, secure credential management, any-plugin ready.
 
 == Description ==
 
@@ -122,7 +122,7 @@ The only outbound call this plugin makes is `GET /v1/health` to Polyglot Cloud (
 * Preflight API key validation via `GET /v1/health` (warn-don't-block strategy).
 * Public helpers for plugin developers: `polyglot_get_api_key()`, `polyglot_get_api_base_url()`, `polyglot_is_connected()`, `polyglot_get_connector_id()`, `polyglot_get_api_key_source()`.
 * Site Health check integration (top-level test + debug info section).
-* BYOK (Bring Your Own Key) workflow via Settings → Connectors.
+* Secure credential management via Settings → Connectors (with environment variable + PHP constant overrides for enterprise hosting).
 * Optional custom API endpoint override via Settings → Polyglot Translate.
 * Localization-ready: English source, Serbian (sr_RS) translation included.
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Polyglot Translate Connector
  * Plugin URI:        https://polyglot-translate.cloud/wordpress-connector
- * Description:       Polyglot Translate as a native WordPress 7.0 Connector. Self-learning translation API for 90+ languages, BYOK credentials, ready for any plugin.
+ * Description:       Polyglot Translate as a native WordPress 7.0 Connector. Self-learning translation API for 90+ languages, secure credential management, ready for any plugin.
  * Version:           1.0.0
  * Requires at least: 7.0
  * Requires PHP:      7.4
