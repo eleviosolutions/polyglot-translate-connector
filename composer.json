@@ -1,0 +1,33 @@
+{
+    "name": "polyglot-translate/wordpress-connector",
+    "description": "Registers Polyglot Translate as a translation provider in WordPress 7.0 Connectors API. BYOK credential management for any WP plugin that wants to use Polyglot Cloud.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://polyglot-translate.cloud/wordpress-connector",
+    "authors": [
+        {
+            "name": "Elevio Solutions",
+            "homepage": "https://polyglot-translate.cloud"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6 || ^10.5",
+        "yoast/phpunit-polyfills": "^2.0",
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "phpcs --standard=WordPress polyglot-translate-connector.php includes/ uninstall.php",
+        "lint:fix": "phpcbf --standard=WordPress polyglot-translate-connector.php includes/ uninstall.php"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    }
+}

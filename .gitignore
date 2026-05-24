@@ -1,0 +1,35 @@
+# Composer
+/vendor/
+/composer.lock
+
+# PHPUnit
+/.phpunit.result.cache
+/coverage/
+/tests/_output/
+
+# WP-Env
+/.wp-env.override.json
+/wp-env/
+
+# Node (in case we add JS tooling later)
+/node_modules/
+package-lock.json
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor noise
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local-only docs / drafts
+/notes/
+/.local-notes.md
+
+# Build artifacts
+/build/
+/dist/
+/*.zip

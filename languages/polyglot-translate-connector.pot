@@ -1,0 +1,144 @@
+# Copyright (C) 2026 Elevio Solutions
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Polyglot Translate Connector 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/eleviosolutions/polyglot-translate-connector/issues\n"
+"POT-Creation-Date: 2026-05-24 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: polyglot-translate-connector\n"
+
+#: includes/class-registrar.php
+msgid "Polyglot Translate"
+msgstr ""
+
+#: includes/class-registrar.php
+msgid "Self-learning translation memory with multi-provider cascade. 90+ languages with native-quality output for Serbian, Croatian, Slovenian, Bulgarian, and other SEE languages."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "No API key configured."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "Could not reach Polyglot Cloud: %s. Key was saved — you can re-test from Site Health."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "API key validated successfully."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "Polyglot Cloud rejected this API key (401/403). Please double-check it on app.polyglot-translate.cloud."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "Unexpected response from Polyglot Cloud (HTTP %d). Key was saved — try again later."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "No validation has been performed yet."
+msgstr ""
+
+#: includes/class-validator.php
+msgid "Polyglot Translate Connector"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Polyglot Translate connector"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Connectors"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Open Connectors settings"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "No Polyglot Translate API key configured. Plugins that depend on this connector will not function until a key is added in Settings → Connectors, or via the POLYGLOT_TRANSLATE_API_KEY environment variable or PHP constant."
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "The configured Polyglot API key (source: %s) was rejected by the cloud. Translation calls will fail until a valid key is configured."
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Polyglot Cloud could not be reached during the last validation. The key is saved but its validity is unknown."
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Polyglot Translate connector is configured and reachable (key source: %s)."
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Connector metadata for the Polyglot Translate translation provider."
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Plugin version"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "API base URL"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "API key source"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Last validation status"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Last validation timestamp"
+msgstr ""
+
+#: includes/class-site-health-check.php
+msgid "Never"
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Custom Polyglot Cloud API base URL (advanced)."
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Advanced — API endpoint override"
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Custom API base URL"
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Polyglot Translate — Advanced"
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Custom API base URL must be a valid HTTPS URL. Reverting to default."
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Most users should leave this empty — the plugin will use the default Polyglot Cloud endpoint. Override only if you operate a self-hosted Polyglot deployment, a reverse-proxy gateway, or use a staging environment."
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Default: %s. HTTPS only. Environment variable POLYGLOT_TRANSLATE_API_BASE and PHP constant POLYGLOT_TRANSLATE_API_BASE take precedence over this setting."
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "To configure your API key, go to %s."
+msgstr ""
+
+#: includes/class-settings-extender.php
+msgid "Settings → Connectors"
+msgstr ""

@@ -1,0 +1,113 @@
+# Serbian translation for Polyglot Translate Connector.
+# Copyright (C) 2026 Elevio Solutions
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Polyglot Translate Connector 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/eleviosolutions/polyglot-translate-connector/issues\n"
+"POT-Creation-Date: 2026-05-24 12:00+0000\n"
+"PO-Revision-Date: 2026-05-24 12:00+0000\n"
+"Last-Translator: Elevio Solutions\n"
+"Language-Team: Serbian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr_RS\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Domain: polyglot-translate-connector\n"
+
+msgid "Polyglot Translate"
+msgstr "Polyglot Translate"
+
+msgid "Self-learning translation memory with multi-provider cascade. 90+ languages with native-quality output for Serbian, Croatian, Slovenian, Bulgarian, and other SEE languages."
+msgstr "Samoučeća translation memory sa multi-provider kaskadom. 90+ jezika sa nativnim kvalitetom za srpski, hrvatski, slovenački, bugarski i ostale jezike Jugoistočne Evrope."
+
+msgid "No API key configured."
+msgstr "API ključ nije konfigurisan."
+
+msgid "Could not reach Polyglot Cloud: %s. Key was saved — you can re-test from Site Health."
+msgstr "Polyglot Cloud nije dostupan: %s. Ključ je sačuvan — možete ponovo testirati iz Site Health-a."
+
+msgid "API key validated successfully."
+msgstr "API ključ je uspešno validiran."
+
+msgid "Polyglot Cloud rejected this API key (401/403). Please double-check it on app.polyglot-translate.cloud."
+msgstr "Polyglot Cloud je odbio ovaj API ključ (401/403). Proverite ga na app.polyglot-translate.cloud."
+
+msgid "Unexpected response from Polyglot Cloud (HTTP %d). Key was saved — try again later."
+msgstr "Neočekivan odgovor sa Polyglot Cloud (HTTP %d). Ključ je sačuvan — pokušajte ponovo kasnije."
+
+msgid "No validation has been performed yet."
+msgstr "Validacija još nije izvršena."
+
+msgid "Polyglot Translate Connector"
+msgstr "Polyglot Translate Connector"
+
+msgid "Polyglot Translate connector"
+msgstr "Polyglot Translate connector"
+
+msgid "Connectors"
+msgstr "Konektori"
+
+msgid "Open Connectors settings"
+msgstr "Otvori podešavanja konektora"
+
+msgid "No Polyglot Translate API key configured. Plugins that depend on this connector will not function until a key is added in Settings → Connectors, or via the POLYGLOT_TRANSLATE_API_KEY environment variable or PHP constant."
+msgstr "Polyglot Translate API ključ nije konfigurisan. Pluginovi koji zavise od ovog konektora neće raditi dok se ključ ne doda u Podešavanja → Konektori, ili preko POLYGLOT_TRANSLATE_API_KEY env varijable ili PHP konstante."
+
+msgid "The configured Polyglot API key (source: %s) was rejected by the cloud. Translation calls will fail until a valid key is configured."
+msgstr "Konfigurisani Polyglot API ključ (izvor: %s) je odbijen od strane cloud-a. Pozivi za prevođenje neće raditi dok se ne konfiguriše validan ključ."
+
+msgid "Polyglot Cloud could not be reached during the last validation. The key is saved but its validity is unknown."
+msgstr "Polyglot Cloud nije bio dostupan tokom poslednje validacije. Ključ je sačuvan ali njegova validnost je nepoznata."
+
+msgid "Polyglot Translate connector is configured and reachable (key source: %s)."
+msgstr "Polyglot Translate connector je konfigurisan i dostupan (izvor ključa: %s)."
+
+msgid "Connector metadata for the Polyglot Translate translation provider."
+msgstr "Connector metapodaci za Polyglot Translate translation provider."
+
+msgid "Plugin version"
+msgstr "Verzija plugin-a"
+
+msgid "API base URL"
+msgstr "Base URL API-ja"
+
+msgid "API key source"
+msgstr "Izvor API ključa"
+
+msgid "Last validation status"
+msgstr "Status poslednje validacije"
+
+msgid "Last validation timestamp"
+msgstr "Vremenska oznaka poslednje validacije"
+
+msgid "Never"
+msgstr "Nikad"
+
+msgid "Custom Polyglot Cloud API base URL (advanced)."
+msgstr "Custom Polyglot Cloud API base URL (napredno)."
+
+msgid "Advanced — API endpoint override"
+msgstr "Napredno — promena API endpoint-a"
+
+msgid "Custom API base URL"
+msgstr "Custom API base URL"
+
+msgid "Polyglot Translate — Advanced"
+msgstr "Polyglot Translate — Napredno"
+
+msgid "Custom API base URL must be a valid HTTPS URL. Reverting to default."
+msgstr "Custom API base URL mora biti validan HTTPS URL. Vraćanje na default."
+
+msgid "Most users should leave this empty — the plugin will use the default Polyglot Cloud endpoint. Override only if you operate a self-hosted Polyglot deployment, a reverse-proxy gateway, or use a staging environment."
+msgstr "Većina korisnika treba da ostavi prazno — plugin će koristiti default Polyglot Cloud endpoint. Promenite samo ako koristite self-hosted Polyglot deployment, reverse-proxy gateway, ili staging environment."
+
+msgid "Default: %s. HTTPS only. Environment variable POLYGLOT_TRANSLATE_API_BASE and PHP constant POLYGLOT_TRANSLATE_API_BASE take precedence over this setting."
+msgstr "Default: %s. Samo HTTPS. Env varijabla POLYGLOT_TRANSLATE_API_BASE i PHP konstanta POLYGLOT_TRANSLATE_API_BASE imaju prioritet nad ovim podešavanjem."
+
+msgid "To configure your API key, go to %s."
+msgstr "Da konfigurišete API ključ, idite na %s."
+
+msgid "Settings → Connectors"
+msgstr "Podešavanja → Konektori"
