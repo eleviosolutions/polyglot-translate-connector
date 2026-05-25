@@ -1,5 +1,5 @@
 === Polyglot Translate Connector ===
-Contributors: eleviosolutions
+Contributors: polyglottranslate
 Tags: translation, translation-api, ai-translation, multilingual, connector
 Requires at least: 7.0
 Tested up to: 7.0
@@ -47,7 +47,7 @@ If you're building a WordPress plugin (AI content generator, SEO tool, WooCommer
     // Make REST calls against $base_url/v1/translate, etc.
 }`
 
-For higher-level conveniences (batching, retry policy, response DTOs), use the official [`polyglot/wp-sdk`](https://github.com/eleviosolutions/polyglot-wp-sdk) Composer package — a separate library that wraps this connector.
+For higher-level conveniences (batching, retry policy, response DTOs), an official `polyglot/wp-sdk` Composer package is planned as a separate library that wraps this connector. Until released, consume the Polyglot Cloud REST API directly using the helpers above.
 
 = Credential precedence =
 

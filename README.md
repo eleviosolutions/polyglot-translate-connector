@@ -14,7 +14,7 @@ WordPress 7.0 introduced the **Connectors API** — a native way to manage exter
 
 1. **For site owners:** familiar UI for managing the Polyglot API key, with automatic REST-response masking and env-var/PHP-constant override support (no API keys in your database if your security policy forbids it).
 2. **For plugin developers:** a stable PHP helper API to discover Polyglot on a site (`polyglot_get_api_key()`, `polyglot_is_connected()`) without each plugin shipping its own settings screen.
-3. **For agencies & enterprises:** install just this lightweight connector (200 LOC PHP, no UI clutter) and consume Polyglot via your own custom code or the [`polyglot/wp-sdk`](https://github.com/eleviosolutions/polyglot-wp-sdk) Composer package.
+3. **For agencies & enterprises:** install just this lightweight connector (200 LOC PHP, no UI clutter) and consume Polyglot via your own custom code or the `polyglot/wp-sdk` (planned, not yet released) Composer package.
 
 ## What this plugin does NOT do
 
@@ -74,7 +74,7 @@ if ( function_exists( 'polyglot_is_connected' ) && polyglot_is_connected() ) {
 }
 ```
 
-For higher-level conveniences (batching, retry policy, error normalization, response DTOs), use the official [`polyglot/wp-sdk`](https://github.com/eleviosolutions/polyglot-wp-sdk) Composer package (separate repo, separate release cycle).
+For higher-level conveniences (batching, retry policy, error normalization, response DTOs), use the official `polyglot/wp-sdk` (planned, not yet released) Composer package (separate repo, separate release cycle).
 
 ## Public API — stable surface
 
@@ -120,5 +120,5 @@ GPL v2 or later — see [LICENSE](./LICENSE).
 ## Related projects
 
 - [Polyglot Translate](https://wordpress.org/plugins/polyglot-translate/) — full translation plugin (consumer of this connector).
-- [`polyglot/wp-sdk`](https://github.com/eleviosolutions/polyglot-wp-sdk) — Composer SDK for plugin developers.
+- `polyglot/wp-sdk` (planned, not yet released) — Composer SDK for plugin developers.
 - [Polyglot Cloud](https://polyglot-translate.cloud) — the translation API service this connector points to.
